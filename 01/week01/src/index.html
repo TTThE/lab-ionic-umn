@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>UI Duplication Exercise</title>
+
+  <base href="/" />
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <style>
+	:root
+	{
+		--ion-background-color: #212121;
+		--ion-background-color-rgb: 33,33,33;
+		--ion-text-color: #dedede;
+		--ion-text-color-rgb: 222,222,222;
+		
+		--ion-color-danger: #cc0000;
+		--ion-color-danger-rgb: 204,0,0;
+		--ion-color-danger-contrast: #ffffff;
+		--ion-color-danger-contrast-rgb: 255,255,255;
+		--ion-color-danger-shade: #c10000;
+		--ion-color-danger-tint: #db0f0f;
+	}
+	
+	.tophalf-grid
+	{
+		display: grid;
+		grid-template-columns: 16.66% 41.67% 41.67%;
+		grid-gap: 3px;
+		padding: 3px;
+	}
+
+	.wholerow
+	{
+		grid-column: 2 / span 2;
+	}
+  </style>
+</head>
+
+<body>  
+<ion-app>
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-button>
+				<ion-icon name="menu"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+		
+		<ion-title>Twilight</ion-title>
+		
+		<ion-buttons slot="primary">
+			<ion-button>
+				<ion-icon name="add"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<!-- past the header section into main menu -->
+<ion-content>
+	<ion-fab vertical="bottom" horizontal="end" slot="fixed" type="button">
+		<ion-fab-button color="danger">
+			<ion-icon name="pause"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+	<div class="tophalf-grid">
+		<div><!-- color circle --></div>
+		<div style="padding: 10px 0;">Color temperature</div>
+		<div>
+			<ion-select>
+				<ion-select-option value="1000">1000K Relaxing</ion-select-option>
+				<ion-select-option value="1500" selected>1500K Relaxing</ion-select-option>
+				<ion-select-option value="2000">2000K Relaxing</ion-select-option>
+				<ion-select-option value="2500">2500K Relaxing</ion-select-option>
+				<ion-select-option value="3000">3000K Relaxing</ion-select-option>
+				<ion-select-option value="3500">3500K Relaxing</ion-select-option>
+				<ion-select-option value="4000">4000K Energizing</ion-select-option>
+				<ion-select-option value="4500">4500K Energizing</ion-select-option>
+				<ion-select-option value="5000">5000K Energizing</ion-select-option>
+			</ion-select>
+		</div>
+		<div class="wholerow">
+			<ion-range id="range_clrTemp" min="1000" max="5000" value="1500" color="danger"></ion-range>
+		</div>
+		
+		<div><!-- color circle --></div>
+		<div style="padding: 10px 0;">Intensity</div>
+		<div>
+			<ion-select>
+				<ion-select-option value="0">0% </ion-select-option>
+				<ion-select-option value="5">5%</ion-select-option>
+				<ion-select-option value="10">10%</ion-select-option>
+				<ion-select-option value="15">15%</ion-select-option>
+				<ion-select-option value="20">20%</ion-select-option>
+				<ion-select-option value="25">25%</ion-select-option>
+				<ion-select-option value="30">30%</ion-select-option>
+				<ion-select-option value="35">35%</ion-select-option>
+				<ion-select-option value="40">40%</ion-select-option>
+				<ion-select-option value="45">45%</ion-select-option>
+				<ion-select-option value="50">50%</ion-select-option>
+				<ion-select-option value="55">55%</ion-select-option>
+				<ion-select-option value="60" selected>60%</ion-select-option>
+				<ion-select-option value="65">65%</ion-select-option>
+				<ion-select-option value="70">70%</ion-select-option>
+				<ion-select-option value="75">75%</ion-select-option>
+				<ion-select-option value="80">80%</ion-select-option>
+				<ion-select-option value="85">85%</ion-select-option>
+				<ion-select-option value="90">90%</ion-select-option>
+				<ion-select-option value="95">95%</ion-select-option>
+				<ion-select-option value="100">100%</ion-select-option>
+			</ion-select>
+		</div>
+		<div class="wholerow">
+			<ion-range id="range_intnsty" value="60" color="danger"></ion-range>
+		</div>
+		
+		<div><!-- color circle --></div>
+		<div style="padding: 10px 0;">Screen dim</div>
+		<div>
+			<ion-select>
+				<ion-select-option value="0">0% </ion-select-option>
+				<ion-select-option value="5">5%</ion-select-option>
+				<ion-select-option value="10">10%</ion-select-option>
+				<ion-select-option value="15">15%</ion-select-option>
+				<ion-select-option value="20">20%</ion-select-option>
+				<ion-select-option value="25">25%</ion-select-option>
+				<ion-select-option value="30">30%</ion-select-option>
+				<ion-select-option value="35">35%</ion-select-option>
+				<ion-select-option value="40">40%</ion-select-option>
+				<ion-select-option value="45">45%</ion-select-option>
+				<ion-select-option value="50">50%</ion-select-option>
+				<ion-select-option value="55">55%</ion-select-option>
+				<ion-select-option value="60">60%</ion-select-option>
+				<ion-select-option value="65">65%</ion-select-option>
+				<ion-select-option value="70">70%</ion-select-option>
+				<ion-select-option value="75">75%</ion-select-option>
+				<ion-select-option value="80">80%</ion-select-option>
+				<ion-select-option value="85">85%</ion-select-option>
+			</ion-select>
+		</div>
+		<div class="wholerow">
+			<ion-range id="range_scrDim" value="32" color="danger"></ion-range>
+		</div>
+	</div>
+	<ion-item-divider></ion-item-divider>
+	
+	<!-- "Filter times" -->
+	<ion-grid>
+		<ion-row>
+			<b>Filter times</b>
+		</ion-row>
+		<ion-row>
+			<!-- Always | Sun | Alarm | Custom -->
+			<ion-segment mode="ios" color="danger">
+				<ion-segment-button>Always</ion-segment-button>
+				<ion-segment-button checked>Sun</ion-segment-button>
+				<ion-segment-button>Alarm</ion-segment-button>
+				<ion-segment-button>Custom</ion-segment-button>
+			</ion-segment>
+		</ion-row>
+		<ion-row>
+			<!-- [flavor text] -->
+		</ion-row>
+		<ion-row>
+			<ion-range dual-knobs id="range_filTimes" color="danger"></ion-range>
+		</ion-row>
+		<ion-row>
+			<ion-col class="ion-padding-horizontal" size="2"><ion-icon name="pin"></ion-icon></ion-col>
+			<ion-col size="10">
+				Sun & Location
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="ion-padding-horizontal" size="2"><ion-icon name="ios-more"></ion-icon></ion-col>
+			<ion-col size="10">
+				More settings
+			</ion-col>
+		</ion-row>
+	</div>
+	</ion-grid>
+
+</ion-content>
+
+<!-- into the "Did we help your eyes?" part -->
+<ion-footer>
+	<ion-toolbar>
+		<ion-grid style="background-color: #b00000;">
+			<ion-row justify-content-center style="color: #aaaaaa;"><b>Did we help your eyes?</b></ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-button expand="full" fill="clear"><ion-label style="color: white;"><b>SHARE</b></ion-label></ion-button>
+				</ion-col>
+				<ion-col>
+					<ion-button expand="full" fill="clear"><ion-label style="color: white;"><b>RATE</b></ion-label></ion-button>
+				</ion-col>
+				<ion-col>
+					<ion-button expand="full" fill="clear"><ion-label style="color: white;"><b>GO PRO</b></ion-label></ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-toolbar>
+</ion-footer>
+</ion-app>
+</body>
+
+</html>

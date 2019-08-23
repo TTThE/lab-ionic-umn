@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Week 01</title>
+	
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+	<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+	
+	<style>
+	ion-card
+	{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	</style>
+</head>
+
+<body onload="init()">
+<ion-app>
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-title>Budget Planner</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-grid fixed>
+	<ion-row justify-content-center>
+
+		<ion-card>
+			<ion-card-header>
+			<ion-card-title><b>Input Pengeluaran</b></ion-card-title>
+			</ion-card-header>
+
+			<ion-card-content>
+				<ion-item>
+					<ion-input required id="name" type="text" placeholder="Pengeluaran"></ion-input>
+				</ion-item>
+
+				<ion-item>
+					<ion-input required id="amount" type="number" placeholder="Jumlah Pengeluaran"></ion-input>
+				</ion-item>
+			</ion-card-content>
+			
+			<ion-card_content class="ion-float-right">
+				<ion-button color="danger" fill="outline" onclick="destroy()">
+					<ion-icon name="close" slot="start"></ion-icon>Bersihkan
+				</ion-button>
+
+				<ion-button color="primary" onclick="add()">
+					<ion-icon name="add" slot="start"></ion-icon>Tambahkan
+				</ion-button>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<!-- javascript -->
+	<ion-row>
+		<ion-col>
+			<ion-list id='list'></ion-list>
+			<ion-card-title>
+				Total spendings: <span id="price"></span>
+			</ion-card-title>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+<ion-alert-controller></ion-alert-controller>
+</ion-app>
+</body>
+</html>
