@@ -1,0 +1,7 @@
+{
+  "name": "week11_FBaseAuth",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

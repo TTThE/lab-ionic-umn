@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "week11_FBaseAuth",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

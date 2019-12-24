@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="secondary">UMN UKM</ion-title>
+    <ion-buttons>
+      <ion-menu-button menu="main_menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let ukm of ukm_list" [routerLink]="['./', ukm.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]="ukm.imageURL"></ion-img>
+      </ion-avatar>
+      <ion-label>{{ ukm.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
